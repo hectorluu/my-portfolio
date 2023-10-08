@@ -1,9 +1,9 @@
-## My Portfolio Website
-# About me:
+# My Portfolio Website
+## About me:
 
 I like to make stuffs :)
 
-# About technology:
+## About technology:
 
 I create the Portfolio Website following [ByteGrad Tutorial](https://github.com/ByteGrad/portfolio-website). 
 
@@ -11,8 +11,6 @@ I create the Portfolio Website following [ByteGrad Tutorial](https://github.com/
 - Sonner for Toasts
 - Framer motion for animation
 - Three.js for illustration
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
 ## About Deployment:
 
