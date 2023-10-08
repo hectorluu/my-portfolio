@@ -14,10 +14,13 @@ const Mini_Room = () => {
   const refContainer = useRef();
   const [loading, setLoading] = useState(true);
   const refRenderer = useRef();
+  // const urlMiniRoomGLB =
+  //   (process.env.NODE_ENV === "production"
+  //     ? "https://craftzdog.global.ssl.fastly.net/homepage"
+  //     : "") + "/mini_room.glb";
   const urlMiniRoomGLB =
-    (process.env.NODE_ENV === "production"
-      ? "https://craftzdog.global.ssl.fastly.net/homepage"
-      : "") + "/mini_room.glb";
+    "https://prod.spline.design/rrTKBJoxXsgo3ZC0/scene.splinecode";
+
   const handleWindowResize = useCallback(() => {
     const { current: renderer } = refRenderer;
     const { current: container } = refContainer;
@@ -42,12 +45,16 @@ const Mini_Room = () => {
       });
       renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setSize(scW, scH);
-      renderer.outputEncoding = THREE.sRGBEncoding;
+      renderer.outputColorSpace = THREE.SRGBColorSpace;
       container.appendChild(renderer.domElement);
       refRenderer.current = renderer;
+
       const scene = new THREE.Scene();
 
-      const target = new THREE.Vector3(-0.5, 1.2, 0);
+      renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = THREE.PCFShadowMap;
+
+      const target = new THREE.Vector3(-0.5, 1.0, 0);
       const initialCameraPosition = new THREE.Vector3(
         20 * Math.sin(0.2 * Math.PI),
         10,
@@ -56,32 +63,21 @@ const Mini_Room = () => {
 
       // 640 -> 240
       // 8   -> 6
-      const scale = scH * 0.005 + 13;
+      const scale = scH * 0.05 + 960;
       const camera = new THREE.OrthographicCamera(
         -scale,
         scale,
         scale,
         -scale,
-        0.01,
-        50000
+        -50000,
+        10000
       );
       camera.position.copy(initialCameraPosition);
       camera.lookAt(target);
 
-      const ambientLight = new THREE.AmbientLight(0xcccccc, 1);
-      scene.add(ambientLight);
-
       const controls = new OrbitControls(camera, renderer.domElement);
       controls.autoRotate = true;
       controls.target = target;
-
-      loadGLTFModel(scene, urlMiniRoomGLB, {
-        receiveShadow: false,
-        castShadow: false,
-      }).then(() => {
-        animate();
-        setLoading(false);
-      });
 
       let req = null;
       let frame = 0;
@@ -92,7 +88,7 @@ const Mini_Room = () => {
 
         if (frame <= 10) {
           const p = initialCameraPosition;
-          const rotSpeed = -easeOutCirc(frame / 120) * Math.PI * 20;
+          const rotSpeed = -easeOutCirc(frame / 120) * Math.PI * 10;
 
           camera.position.y = 10;
           camera.position.x =
@@ -107,6 +103,18 @@ const Mini_Room = () => {
         renderer.render(scene, camera);
       };
 
+      try {
+        loadGLTFModel(scene, urlMiniRoomGLB, {
+          receiveShadow: false,
+          castShadow: false,
+        }).then(() => {
+          animate();
+          setLoading(false);
+        });
+      } catch (error) { 
+        throw new Error(error);
+      }
+      
       return () => {
         cancelAnimationFrame(req);
         renderer.domElement.remove();

@@ -10,7 +10,6 @@ import { FaGithubSquare } from "react-icons/fa";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { useSectionInView } from "@/lib/hook";
 import Silver_Wolf_003 from "@/public/Silver_Wolf_003.png";
-import { Spinner } from "@nextui-org/react";
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);

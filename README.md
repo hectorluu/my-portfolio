@@ -4,7 +4,7 @@ Checkout my portfolio at [My Portfolio]()
 
 ## About project:
 
-I create the Portfolio Website following [ByteGrad Tutorial](https://github.com/ByteGrad/portfolio-website). 
+I create the Portfolio Website by following [ByteGrad Tutorial](https://github.com/ByteGrad/portfolio-website).
 
 ## Stack:
 
@@ -18,7 +18,7 @@ I create the Portfolio Website following [ByteGrad Tutorial](https://github.com/
 
 ```
 $PROJECT_ROOT
-│   # Send email 
+│   # Send email
 ├── action
 │   # Project structure
 ├── app
@@ -34,6 +34,6 @@ $PROJECT_ROOT
 └── public
 ```
 
-## About Deployment:
+## Deployment:
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.

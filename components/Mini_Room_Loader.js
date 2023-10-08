@@ -1,5 +1,6 @@
 import { forwardRef } from "react";
 import { Box, Spinner } from "@chakra-ui/react";
+import { ChakraProvider } from '@chakra-ui/react'
 
 export const MiniRoomSpinner = () => (
   <Spinner
@@ -13,18 +14,20 @@ export const MiniRoomSpinner = () => (
 );
 
 export const MiniRoomContainer = forwardRef(({ children }, ref) => (
-  <Box
-    ref={ref}
-    className="mini-room"
-    m="auto"
-    mt={["-50px", "-50px", "-50px"]}
-    mb={["-40px", "-140px", "-100px"]}
-    w={["20rem", "30rem", "40rem"]}
-    h={["20rem", "30rem", "40rem"]}
-    position="relative"
-  >
-    {children}
-  </Box>
+  <ChakraProvider>
+    <Box
+      ref={ref}
+      className="mini-room"
+      m="auto"
+      mt={["-50px", "-50px", "-50px"]}
+      mb={["-40px", "-140px", "-100px"]}
+      w={["20rem", "30rem", "40rem"]}
+      h={["20rem", "30rem", "40rem"]}
+      position="relative"
+    >
+      {children}
+    </Box>
+  </ChakraProvider>
 ));
 
 MiniRoomContainer.displayName = "MiniRoomContainer"; // Add a displayName
