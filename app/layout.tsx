@@ -1,3 +1,5 @@
+"use client";
+
 import Header from "@/components/header";
 import "./globals.css";
 import { Inter } from "next/font/google";
@@ -6,8 +8,15 @@ import Footer from "@/components/footer";
 import ThemeSwitch from "@/components/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
 import { Toaster } from "sonner";
+import dynamic from "next/dynamic";
+import MiniRoomLoader from "@/components/Mini_Room_Loader";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const LazyLoadMini_Room = dynamic(() => import('../components/Mini_Room'), {
+  ssr: false,
+  loading: () => <MiniRoomLoader />
+})
 
 export const metadata = {
   title: "Portfolio",
@@ -30,6 +39,7 @@ export default function RootLayout({
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
             <Header />
+              <LazyLoadMini_Room />
             {children}
             <Footer />
 

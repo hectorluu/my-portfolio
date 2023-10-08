@@ -1,16 +1,38 @@
 # My Portfolio Website
-## About me:
 
-I like to make stuffs :)
+Checkout my portfolio at [My Portfolio]()
 
-## About technology:
+## About project:
 
 I create the Portfolio Website following [ByteGrad Tutorial](https://github.com/ByteGrad/portfolio-website). 
 
-- Resend as EmailSender
-- Sonner for Toasts
+## Stack:
+
+- Next UI
 - Framer motion for animation
 - Three.js for illustration
+- Resend as EmailSender
+- Sonner for Toasts
+
+## Project structure
+
+```
+$PROJECT_ROOT
+│   # Send email 
+├── action
+│   # Project structure
+├── app
+│   # React component files
+├── components
+│   # Global context
+├── context
+│   # Non-react modules
+├── lib
+│   # Email Template
+├── email
+│   # Static files for images, cv and 3d model file
+└── public
+```
 
 ## About Deployment:
 
