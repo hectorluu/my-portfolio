@@ -7,6 +7,7 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+
 import { experiencesData } from "@/lib/data";
 import { useTheme } from "@/context/theme-context";
 import { useSectionInView } from "@/lib/hook";
@@ -53,6 +54,7 @@ export default function Experience() {
           </React.Fragment>
         ))}
       </VerticalTimeline>
+
     </section>
   );
 }
