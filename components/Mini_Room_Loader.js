@@ -1,36 +1,40 @@
-import { forwardRef } from 'react'
-import {Spinner} from "@nextui-org/react";
+import { forwardRef } from "react";
+import { Box, Spinner } from "@chakra-ui/react";
 
 export const MiniRoomSpinner = () => (
   <Spinner
-    size="lg"
-    className='absolute left-[50% top-[50%] ml-[calc(0px - var(--spinner-size) / 2)] mt-[calc(0px - var(--spinner-size))]'
+    size="xl"
+    position="absolute"
+    left="50%"
+    top="50%"
+    ml="calc(0px - var(--spinner-size) / 2)"
+    mt="calc(0px - var(--spinner-size))"
   />
-)
+);
 
 export const MiniRoomContainer = forwardRef(({ children }, ref) => (
-  <div
+  <Box
     ref={ref}
     className="mini-room"
     m="auto"
-    mt={['-20px', '-60px', '-120px']}
-    mb={['-40px', '-140px', '-200px']}
-    w={[280, 480, 640]}
-    h={[280, 480, 640]}
+    mt={["-50px", "-50px", "-50px"]}
+    mb={["-40px", "-140px", "-100px"]}
+    w={["20rem", "30rem", "40rem"]}
+    h={["20rem", "30rem", "40rem"]}
     position="relative"
   >
     {children}
-  </div>
-))
+  </Box>
+));
 
-MiniRoomContainer.displayName = "Mini Room"; // Add a displayName
+MiniRoomContainer.displayName = "MiniRoomContainer"; // Add a displayName
 
 const Loader = () => {
   return (
     <MiniRoomContainer>
       <MiniRoomSpinner />
     </MiniRoomContainer>
-  )
-}
+  );
+};
 
-export default Loader
+export default Loader;

@@ -9,14 +9,16 @@ import ThemeSwitch from "@/components/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
 import { Toaster } from "sonner";
 import dynamic from "next/dynamic";
-import MiniRoomLoader from "@/components/Mini_Room_Loader";
+import Loader from "@/components/Mini_Room_Loader";
+import { Spinner } from "@nextui-org/react";
+import { ChakraProvider } from "@chakra-ui/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const LazyLoadMini_Room = dynamic(() => import('../components/Mini_Room'), {
+const LazyLoadMini_Room = dynamic(() => import("../components/Mini_Room"), {
   ssr: false,
-  loading: () => <MiniRoomLoader />
-})
+  loading: () => <Loader />,
+});
 
 export const metadata = {
   title: "Portfolio",
@@ -37,15 +39,17 @@ export default function RootLayout({
         <div className="bg-[#dbd7fb] absolute top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#676394]"></div>
 
         <ThemeContextProvider>
-          <ActiveSectionContextProvider>
-            <Header />
+          <ChakraProvider>
+            <ActiveSectionContextProvider>
+              <Header />
               <LazyLoadMini_Room />
-            {children}
-            <Footer />
+              {children}
+              <Footer />
 
-            <Toaster position="top-right" richColors/>
-            <ThemeSwitch />
-          </ActiveSectionContextProvider>
+              <Toaster position="top-right" richColors />
+              <ThemeSwitch />
+            </ActiveSectionContextProvider>
+          </ChakraProvider>
         </ThemeContextProvider>
       </body>
     </html>
