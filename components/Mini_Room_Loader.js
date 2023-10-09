@@ -1,6 +1,8 @@
+"use client";
+
 import { forwardRef } from "react";
 import { Box, Spinner } from "@chakra-ui/react";
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider } from "@chakra-ui/react";
 
 export const MiniRoomSpinner = () => (
   <Spinner

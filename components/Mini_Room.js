@@ -6,9 +6,9 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { loadGLTFModel } from "../lib/loadGLTFModel";
 import { MiniRoomContainer, MiniRoomSpinner } from "./Mini_Room_Loader";
 
-function easeOutCirc(x) {
+const easeOutCirc = (x) => {
   return Math.sqrt(1 - Math.pow(x - 1, 4));
-}
+};
 
 const Mini_Room = () => {
   const refContainer = useRef();
@@ -54,7 +54,7 @@ const Mini_Room = () => {
       renderer.shadowMap.enabled = true;
       renderer.shadowMap.type = THREE.PCFShadowMap;
 
-      const target = new THREE.Vector3(-0.5, 1.0, 0);
+      const target = new THREE.Vector3(-1, 1.0, 0);
       const initialCameraPosition = new THREE.Vector3(
         20 * Math.sin(0.2 * Math.PI),
         10,
@@ -111,10 +111,10 @@ const Mini_Room = () => {
           animate();
           setLoading(false);
         });
-      } catch (error) { 
+      } catch (error) {
         throw new Error(error);
       }
-      
+
       return () => {
         cancelAnimationFrame(req);
         renderer.domElement.remove();
