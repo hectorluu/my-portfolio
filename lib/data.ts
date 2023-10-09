@@ -35,26 +35,34 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Graduated bootcamp",
-    location: "Miami, FL",
+    title: "High School Graduation",
+    location: "Rach Gia City, Kien Giang Province",
     description:
-      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
+      "I was a student of English-major class in high school for the gifted. I graduated with excellent level.",
     icon: React.createElement(LuGraduationCap),
     date: "2019",
   },
   {
-    title: "Front-End Developer",
-    location: "Orlando, FL",
+    title: "English Semester Abroad",
+    location: "Multimedia University, Cyberjaya, Malaysia",
     description:
-      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
-    icon: React.createElement(CgWorkAlt),
-    date: "2019 - 2021",
+      "I learned English and gained a Certificate of Attendance Semester Abroad Programme",
+    icon: React.createElement(LuGraduationCap),
+    date: "11/2019 - 12/2019",
   },
   {
-    title: "Full-Stack Developer",
-    location: "Houston, TX",
+    title: "Front-End Developer",
+    location: "FPT Software",
     description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
+      "I joined a 3-month internship program. I worked as a front-end developer and a tester on a project for a client in the Japan.",
+    icon: React.createElement(FaReact),
+    date: "9/2021 - 12/2021",
+  },
+  {
+    title: "University Graduation",
+    location: "FPT University, Ho Chi Minh City",
+    description:
+      "I graduated with a Bachelor's Degree in Software Engineering. The final project was a web app for managing the employees who take part in OJT programme in a software company.",
     icon: React.createElement(FaReact),
     date: "2021 - present",
   },
@@ -94,14 +102,8 @@ export const skillsData = [
   "Node.js",
   "Git",
   "Tailwind",
-  "Prisma",
   "MongoDB",
   "Redux",
-  "GraphQL",
-  "Apollo",
-  "Express",
-  "PostgreSQL",
   "Python",
-  "Django",
   "Framer Motion",
 ] as const;
