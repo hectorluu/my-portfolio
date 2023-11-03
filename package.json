@@ -7,7 +7,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "compile": "sass --watch --no-source-map app/globals.scss:app/globals.css"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.8.1",
@@ -35,6 +36,7 @@
     "react-intersection-observer": "^9.5.2",
     "react-vertical-timeline-component": "^3.6.0",
     "resend": "^0.16.0",
+    "sass": "^1.69.1",
     "sonner": "^1.0.3",
     "tailwindcss": "3.3.2",
     "three": "^0.157.0",
