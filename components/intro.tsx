@@ -9,7 +9,7 @@ import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { useSectionInView } from "@/lib/hook";
-import Silver_Wolf_003 from "@/public/Silver_Wolf_003.png";
+import avatar from "@/public/avatar.jpg";
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
@@ -32,26 +32,26 @@ export default function Intro() {
             }}
           >
             <Image
-              src={Silver_Wolf_003}
+              src={avatar}
               alt="Portrait"
-              width="192"
-              height="192"
+              width="576"
+              height="576"
               quality="95"
               priority={true}
-              className="h-24 w-24 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
+              className="h-72 w-72 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
             />
           </motion.div>
         </div>
       </div>
 
       <motion.h1
-        className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
+        className="mb-10 mt-4 px-1 text-2xl font-medium !leading-[1.5] sm:text-4xl"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        Hello, <span className="font-bold"> I'm Hung Luu.</span> I enjoy
-        building <span className="italic">sites & apps</span>. My focus is{" "}
-        <span className="underline">React & Next.js</span>.
+        Hello, <span className="font-bold"> I'm Hung Luu.</span> <br/>
+        I love building <span className="italic">websites & applications</span>. <br/> 
+        My focus is{" "} <span className="underline">ReactJS & TypeScript</span>.
       </motion.h1>
 
       <motion.div
@@ -76,7 +76,7 @@ export default function Intro() {
 
         <a
           className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 mr-2"
-          href="/CV.pdf"
+          href="/LuuDucHung_FrontendDeveloper.pdf"
           download
         >
           Download CV{" "}
@@ -93,7 +93,7 @@ export default function Intro() {
 
         <a
           className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-          href="https://github.com/knightz-007"
+          href="https://github.com/hectorluu"
           target="_blank"
         >
           <FaGithubSquare />
