@@ -1,9 +1,7 @@
-"use client";
-
 import Header from "@/components/header";
 import "./globals.css";
 import { Inter } from "next/font/google";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import Footer from "@/components/footer";
 import ThemeSwitch from "@/components/theme-switch";
@@ -25,14 +23,16 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-
   const [isLoading, setIsLoading] = useState(true);
 
   return (
     <LoadingContext.Provider value={{ isLoading, setIsLoading }}>
       <html lang="en" className="!scroll-smooth">
         <head>
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
           <link rel="icon" type="image/png" href="/icon.png" />
         </head>
         <body
