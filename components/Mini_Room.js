@@ -5,7 +5,7 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { loadGLTFModel } from "../lib/loadGLTFModel";
 import { MiniRoomContainer, MiniRoomSpinner } from "./Mini_Room_Loader";
-import LoadingContext from "@/context/LoadingContext";
+import { LoadingContext } from "@/context/overlay-context";
 
 const easeOutCirc = (x) => {
   return Math.sqrt(1 - Math.pow(x - 1, 4));
@@ -13,8 +13,13 @@ const easeOutCirc = (x) => {
 
 const Mini_Room = () => {
   const refContainer = useRef();
-  const { setIsLoading } = useContext(LoadingContext);
+  const { isLoading, setIsLoading } = useContext(LoadingContext);
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(loading);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loading]);
 
   const refRenderer = useRef();
   // const urlMiniRoomGLB =
@@ -113,7 +118,6 @@ const Mini_Room = () => {
         }).then(() => {
           animate();
           setLoading(false);
-          setIsLoading(false);
         });
       } catch (error) {
         throw new Error(error);
