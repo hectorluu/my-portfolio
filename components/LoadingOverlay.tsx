@@ -12,7 +12,7 @@ const LoadingOverlay = () => (
           objectFit="cover"
         />
       </div>
-      <div className="mt-[-25px] text-3xl font-bold z-[10000] italic">
+      <div className="mt-[-25px] text-3xl font-bold z-[10000] italic text-black">
         NOW LOADING
       </div>
     </div>
