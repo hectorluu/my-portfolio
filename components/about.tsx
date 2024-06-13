@@ -19,24 +19,20 @@ export default function About() {
     >
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3">
-        Driven to craft impactful web experiences, 
-        I'm an eager <span className="font-medium">front-end developer</span> with a passion for <span className="underline font-medium">Javascript and ReactJS</span>, coupled with good English skills. 
-        While proficient in <span className="underline font-medium">ASP.NET Core</span>, my focus lies in <span className="italic">designing user-centric interfaces</span> that engage and delight audiences. 
+        Driven to craft impactful web experiences,
+        I'm an eager <span className="font-medium">front-end developer</span> with a passion for <span className="underline font-medium">Javascript and ReactJS</span>, coupled with good English skills.
+        While proficient in <span className="underline font-medium">ASP.NET Core</span>, my focus lies in <span className="italic">designing user-centric interfaces</span> that engage and delight audiences.
         My strong <span className="font-medium">problem-solving skills</span>, <span className="font-medium">collaborative spirit</span>, and <span className="font-medium">thirst for learning</span> make me a dedicated teammate ready to contribute to innovative projects in a fast-paced environment.
 
         I am also familiar with <span className="underline font-medium">TypeScript</span>. I am always looking to
-        learn new technologies. I am currently looking for a{" "}
-        <span className="font-medium">full-time position</span> as a front-end
-        developer.
+        learn new technologies.
       </p>
 
       <p>
         <span className="italic">When I'm not coding</span>, I enjoy playing
-        video games, watching movies, and reading novels. 
+        video games, watching movies, and reading novels.
         I also how to play the guitar. I also enjoy{" "}
-        <span className="font-medium">playing sports and learning new things</span>. 
-        I am currently learning about{" "}
-        <span className="font-medium">microservices and their architectures</span>. 
+        <span className="font-medium">playing sports and learning new things</span>.
       </p>
     </motion.section>
   );

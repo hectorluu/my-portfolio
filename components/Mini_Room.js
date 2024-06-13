@@ -1,10 +1,11 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback, useContext } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { loadGLTFModel } from "../lib/loadGLTFModel";
 import { MiniRoomContainer, MiniRoomSpinner } from "./Mini_Room_Loader";
+import LoadingContext from "@/context/LoadingContext";
 
 const easeOutCirc = (x) => {
   return Math.sqrt(1 - Math.pow(x - 1, 4));
@@ -12,7 +13,9 @@ const easeOutCirc = (x) => {
 
 const Mini_Room = () => {
   const refContainer = useRef();
+  const { setIsLoading } = useContext(LoadingContext);
   const [loading, setLoading] = useState(true);
+
   const refRenderer = useRef();
   // const urlMiniRoomGLB =
   //   (process.env.NODE_ENV === "production"
@@ -63,7 +66,7 @@ const Mini_Room = () => {
 
       // 640 -> 240
       // 8   -> 6
-      const scale = scH * 0.05 + 960;
+      const scale = scH * 0.2 + 960;
       const camera = new THREE.OrthographicCamera(
         -scale,
         scale,
@@ -110,6 +113,7 @@ const Mini_Room = () => {
         }).then(() => {
           animate();
           setLoading(false);
+          setIsLoading(false);
         });
       } catch (error) {
         throw new Error(error);

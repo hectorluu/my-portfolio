@@ -1,10 +1,9 @@
 import React from "react";
-import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import corpcommentImg from "@/public/corpcomment.png";
-import rmtdevImg from "@/public/rmtdev.png";
-import wordanalyticsImg from "@/public/wordanalytics.png";
+import ojtImg from "@/public/OJTProject.png";
+import groceryImg from "@/public/GroceryProject.png";
+import ecomerceImg from "@/public/ShopifyProject.png";
 
 export const links = [
   {
@@ -54,7 +53,7 @@ export const experiencesData = [
     title: "Front-End Developer",
     location: "FPT Software",
     description:
-      "I joined a 3-month internship program. I worked as a front-end developer and a tester on a project for a client in the Japan.",
+      "I joined a 3-month internship program. I worked as a developer and a tester on a project in FHM-CMS of FPT Software.",
     icon: React.createElement(FaReact),
     date: "9/2021 - 12/2021",
   },
@@ -62,55 +61,63 @@ export const experiencesData = [
     title: "University Graduation",
     location: "FPT University, Ho Chi Minh City",
     description:
-      "I graduated with a Bachelor's Degree in Software Engineering. The final project was a web app for managing the employees who take part in OJT programme in a software company.",
+      "I graduated with a Bachelor's Degree in Software Engineering. The final project was a web app for managing the employees who take part in OJT program in a software company.",
+    icon: React.createElement(LuGraduationCap),
+    date: "12/2023",
+  },
+  {
+    title: "Freelance Web Developer",
+    location: "Ho Chi Minh City",
+    description:
+      "I worked as a freelance web developer. I built websites for small businesses and individuals.",
     icon: React.createElement(FaReact),
-    date: "2021 - present",
+    date: "1/2024 - 6/2024",
   },
 ] as const;
 
 export const projectsData = [
   {
-    title: "CorpComment",
+    title: "OJT Management System",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
-    imageUrl: corpcommentImg,
+      "This is an internal management system to manage employees participating in on-the-job training program.",
+    tags: ["React", "Redux", "C# ASP.NET", "MS SQL Server", "Firebase"],
+    imageUrl: ojtImg,
   },
   {
-    title: "rmtDev",
+    title: "Grocery Store Management System",
     description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-    imageUrl: rmtdevImg,
+      "This web application helps the store owners of small-to-medium-sized grocery stores to deal with a lot of daily problems.",
+    tags: ["React", "TypeScript", "Redux", "C# ASP.NET", "Firebase"],
+    imageUrl: groceryImg,
   },
   {
-    title: "Word Analytics",
+    title: "Ecommerce",
     description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
-    imageUrl: wordanalyticsImg,
+      "This web application was developed using Next.js 13 for an e-commerce platform.",
+    tags: ["NextJS", "TypeScript", "TailwindCSS", "Shopify"],
+    imageUrl: ecomerceImg,
   },
 ] as const;
 
 export const skillsData = [
-  "HTML",
-  "CSS",
   "JavaScript",
   "TypeScript",
-  "React",
+  "ReactJS",
+  "NextJS",
+  "CSS",
   "Redux",
-  "Next.js",
   "Node.js",
   "C#",
   "ASP.NET Core",
   "Git",
   "Postman",
   "Figma",
+  "Firebase",
   "Tailwind",
   "Bootstrap",
   "SQL Server",
   "MySQL",
   "MongoDB",
-  "Python",
   "Framer Motion",
+  "Jest",
 ] as const;
